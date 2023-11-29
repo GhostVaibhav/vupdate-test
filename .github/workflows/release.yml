@@ -18,7 +18,7 @@ jobs:
     - name: Installing the dependencies
       run: |
         sudo apt update
-        sudo apt install libssl-dev g++ cmake make -y
+        sudo apt install libssl-dev g++ cmake make libfuse2 -y
 
     - name: Build the project
       run: |
