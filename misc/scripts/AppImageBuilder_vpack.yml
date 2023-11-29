@@ -5,7 +5,7 @@ AppDir:
   app_info:
     id: vpack
     name: vpack
-    icon: application-vnd.appimage
+    icon:
     version: v0.1.2-alpha
     exec: ../build/AppDir/usr/bin/vpack
     exec_args: $@
