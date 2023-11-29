@@ -353,6 +353,10 @@ else()
             DESTINATION ${CMAKE_INSTALL_PREFIX}/vupdate)
   endif()
 
+  if(LINUX)
+    install(FILES misc/icon/vav.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons)
+  endif()
+
   # =========================================
   # Removing the "cmake" and "pkgconfig" dirs
   # =========================================
