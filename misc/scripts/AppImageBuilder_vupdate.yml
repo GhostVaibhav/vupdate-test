@@ -5,7 +5,6 @@ AppDir:
   app_info:
     id: vupdate
     name: vupdate
-    icon: utilities-terminal
     version: v0.1.2-alpha
     exec: ../build/AppDir/usr/bin/vupdater
     exec_args: $@
