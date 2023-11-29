@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=v0.1.2-alpha
+Type=Application
+Name=vpack
+Comment=VPack
+Exec=../build/AppDir/usr/bin/vpack
+Icon=vav
+MimeType=image/x-foo;
+Categories=Utility;

@@ -29,11 +29,15 @@ jobs:
       uses: AppImageCrafters/build-appimage@master
       with:
         recipe: "./misc/scripts/AppImageBuilder_vpack.yml"
+      env:
+        UPDATE_INFO: gh-releases-zsync|GhostVaibhav|vupdate|latest|*x86_64.AppImage.zsync
 
     - name: Building the AppImage for vupdate
       uses: AppImageCrafters/build-appimage@master
       with:
         recipe: "./misc/scripts/AppImageBuilder_vupdate.yml"
+      env:
+        UPDATE_INFO: gh-releases-zsync|GhostVaibhav|vupdate|latest|*x86_64.AppImage.zsync
     
     - name: Release
       uses: softprops/action-gh-release@v1

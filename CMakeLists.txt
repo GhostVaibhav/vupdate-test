@@ -354,7 +354,9 @@ else()
   endif()
 
   if(LINUX)
-    install(FILES "misc/icon/vav.png" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons)
+    install(FILES "misc/icon/vav.desktop" DESTINATION share/applications/ COMPONENT desktop)
+    install(FILES "misc/icon/vav2.desktop" DESTINATION share/applications/ COMPONENT desktop)
+    install(FILES "misc/icon/vav.png" DESTINATION share/icons/hicolor/256x256/apps COMPONENT desktop)
   endif()
 
   # =========================================

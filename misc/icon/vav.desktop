@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=v0.1.2-alpha
+Type=Application
+Name=vupdate
+Comment=VUpdater
+Exec=../build/AppDir/usr/bin/vupdater
+Icon=vav
+MimeType=image/x-foo;
+Categories=Utility;
