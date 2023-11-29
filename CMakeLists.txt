@@ -334,7 +334,9 @@ else()
   else()
     install(TARGETS vpack RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
     install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
-
+    install(FILES "misc/icon/vav.desktop" DESTINATION share/applications/ COMPONENT desktop)
+    install(FILES "misc/icon/vav2.desktop" DESTINATION share/applications/ COMPONENT desktop)
+    install(FILES "misc/icon/vav.png" DESTINATION share/icons/hicolor/256x256/apps COMPONENT desktop)
   endif()
   if(CMAKE_BUILD_TYPE STREQUAL "Debug" OR CMAKE_BUILD_TYPE STREQUAL
                                           "RelWithDebInfo")
@@ -351,12 +353,6 @@ else()
     file(GLOB CURL_RUNTIME_HEADER "${CMAKE_BINARY_DIR}/vlib/bin/*.dll")
     install(FILES ${CURL_RUNTIME_HEADER}
             DESTINATION ${CMAKE_INSTALL_PREFIX}/vupdate)
-  endif()
-
-  if(LINUX)
-    install(FILES "misc/icon/vav.desktop" DESTINATION share/applications/ COMPONENT desktop)
-    install(FILES "misc/icon/vav2.desktop" DESTINATION share/applications/ COMPONENT desktop)
-    install(FILES "misc/icon/vav.png" DESTINATION share/icons/hicolor/256x256/apps COMPONENT desktop)
   endif()
 
   # =========================================
