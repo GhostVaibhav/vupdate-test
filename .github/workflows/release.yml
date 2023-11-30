@@ -23,10 +23,10 @@ jobs:
     - name: Build the project
       run: |
         mkdir build && cd build
-        cmake .. -DCOMPILE=0 -DCMAKE_BUILD_TYPE=$BUILD_TYPE
-        cmake --build . -j $(nproc) --config $BUILD_TYPE
-        cmake .. -DCOMPILE=1 -DDO_NOT_FORMAT=OFF -DCMAKE_BUILD_TYPE=$BUILD_TYPE
-        cmake --build . -j $(nproc) --config $BUILD_TYPE --target install
+        cmake .. -DCOMPILE=0 -DCMAKE_BUILD_TYPE=Release
+        cmake --build . -j $(nproc) --config Release
+        cmake .. -DCOMPILE=1 -DDO_NOT_FORMAT=OFF -DCMAKE_BUILD_TYPE=Release
+        cmake --build . -j $(nproc) --config Release --target install
 
     - name: Zipping files
       run: |
