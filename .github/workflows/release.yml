@@ -27,7 +27,7 @@ jobs:
         cmake --build . -j $(nproc) --config Release
         cmake .. -DCOMPILE=1 -DDO_NOT_FORMAT=OFF -DCMAKE_BUILD_TYPE=Release
         cmake --build . -j $(nproc) --config Release --target install
-        cd build/vlib
+        cd vlib
         zip -r vlib-linux-gcc-v0.1.2-alpha.zip .
 
     # - name: Building the AppImage for vpack
