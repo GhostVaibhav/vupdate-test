@@ -27,18 +27,8 @@ jobs:
         cmake --build . -j $(nproc) --config Release
         cmake .. -DCOMPILE=1 -DDO_NOT_FORMAT=OFF -DCMAKE_BUILD_TYPE=Release
         cmake --build . -j $(nproc) --config Release --target install
-    
-    - name: Uploading the artifacts
-      id: upload-artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: vlib-linux-gcc-v0.1.2-alpha
-        path: ./build/vlib/*
-
-    - name: Listing the artifacts
-      run: |
-        ls -la
-        ls -la ./build
+        cd build/vlib
+        zip -r vlib-linux-gcc-v0.1.2-alpha.zip .
 
     # - name: Building the AppImage for vpack
     #   uses: AppImageCrafters/build-appimage@master
@@ -58,6 +48,6 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          ${{ steps.upload-artifact.outputs.download-path }}
+          ./build/vlib/vlib-linux-gcc-v0.1.2-alpha.zip
         tag_name: v0.1.2-alpha
         draft: true
