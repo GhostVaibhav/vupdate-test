@@ -33,8 +33,6 @@ jobs:
       with:
         name: vlib-linux-gcc-v0.1.2-alpha
         path: ./build/vlib/*
-      env:
-        ACTIONS_STEP_DEBUG: true
 
     - name: Listing the artifacts
       run: |
