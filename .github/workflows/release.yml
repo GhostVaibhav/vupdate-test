@@ -37,7 +37,7 @@ jobs:
     - name: Listing the artifacts
       run: |
         ls -la
-        ls -la ./build/vlib
+        ls -la ./build
 
     # - name: Building the AppImage for vpack
     #   uses: AppImageCrafters/build-appimage@master
