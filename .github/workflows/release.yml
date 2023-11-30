@@ -34,6 +34,11 @@ jobs:
         name: vlib-linux-gcc-v0.1.2-alpha
         path: ./build/vlib/*
 
+    - name: Listing the artifacts
+      run: |
+        ls -la
+        ls -la ./build/vlib
+
     # - name: Building the AppImage for vpack
     #   uses: AppImageCrafters/build-appimage@master
     #   with:
