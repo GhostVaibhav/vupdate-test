@@ -27,7 +27,7 @@ jobs:
 
     - name: Zipping files
       run: |
-        zip -r vlib-linux-gcc-v0.1.2-alpha.zip build/vlib
+        zip -r -j vlib-linux-gcc-v0.1.2-alpha.zip build/vlib
     
     - name: Uploading the artifacts
       uses: actions/upload-artifact@v2
@@ -54,8 +54,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/v')
       with:
         files: |
-          ./vpack*.AppImage
-          ./vupdate*.AppImage
+          ./vlib-linux-gcc-v0.1.2-alpha.zip
         tag_name: ${{ github.ref }}
         body: |
           This is an automated release of the ${{ github.ref }} tag.
