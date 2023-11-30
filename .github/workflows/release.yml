@@ -13,7 +13,7 @@ jobs:
       contents: write
     steps:
     - name: Checkout the code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Installing the dependencies
       run: |
@@ -31,7 +31,7 @@ jobs:
         zip -r vlib-linux-gcc-v0.1.2-alpha.zip .
     
     - name: Uploading the artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: vlib-linux-gcc-v0.1.2-alpha
         path: ./build/vlib/vlib-linux-gcc-v0.1.2-alpha.zip
