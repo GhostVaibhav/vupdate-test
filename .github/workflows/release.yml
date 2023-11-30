@@ -34,7 +34,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: vlib-linux-gcc-v0.1.2-alpha
-        path: vlib-linux-gcc-v0.1.2-alpha.zip
+        path: ./build/vlib/vlib-linux-gcc-v0.1.2-alpha.zip
 
     # - name: Building the AppImage for vpack
     #   uses: AppImageCrafters/build-appimage@master
