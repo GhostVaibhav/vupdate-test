@@ -337,6 +337,11 @@ else()
     install(FILES "misc/icon/vav.desktop" DESTINATION share/applications/ COMPONENT desktop)
     install(FILES "misc/icon/vav2.desktop" DESTINATION share/applications/ COMPONENT desktop)
     install(FILES "misc/icon/vav.png" DESTINATION share/icons/hicolor/256x256/apps COMPONENT desktop)
+    install(
+      TARGETS vlib
+      PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_PREFIX}/vlib/include/vlib
+      ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/vlib/lib
+      LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/vlib/lib)
   endif()
   if(CMAKE_BUILD_TYPE STREQUAL "Debug" OR CMAKE_BUILD_TYPE STREQUAL
                                           "RelWithDebInfo")
