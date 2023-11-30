@@ -22,8 +22,11 @@ jobs:
 
     - name: Build the project
       run: |
-        chmod +x misc/dist/install-appimage.sh
-        misc/dist/install-appimage.sh
+        mkdir build && cd build
+        cmake .. -DCOMPILE=0 -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+        cmake --build . -j $(nproc) --config $BUILD_TYPE
+        cmake .. -DCOMPILE=1 -DDO_NOT_FORMAT=OFF -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+        cmake --build . -j $(nproc) --config $BUILD_TYPE --target install
 
     - name: Zipping files
       run: |
