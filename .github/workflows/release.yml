@@ -25,19 +25,29 @@ jobs:
         chmod +x misc/dist/install-appimage.sh
         misc/dist/install-appimage.sh
 
-    - name: Building the AppImage for vpack
-      uses: AppImageCrafters/build-appimage@master
+    - name: Zipping files
+      run: |
+        zip -r vlib-linux-gcc-v0.1.2-alpha.zip build/vlib
+    
+    - name: Uploading the artifacts
+      uses: actions/upload-artifact@v2
       with:
-        recipe: "./misc/scripts/AppImageBuilder_vpack.yml"
-      env:
-        UPDATE_INFO: gh-releases-zsync|GhostVaibhav|vupdate|latest|*x86_64.AppImage.zsync
+        name: vlib-linux-gcc-v0.1.2-alpha
+        path: vlib-linux-gcc-v0.1.2-alpha.zip
 
-    - name: Building the AppImage for vupdate
-      uses: AppImageCrafters/build-appimage@master
-      with:
-        recipe: "./misc/scripts/AppImageBuilder_vupdate.yml"
-      env:
-        UPDATE_INFO: gh-releases-zsync|GhostVaibhav|vupdate|latest|*x86_64.AppImage.zsync
+    # - name: Building the AppImage for vpack
+    #   uses: AppImageCrafters/build-appimage@master
+    #   with:
+    #     recipe: "./misc/scripts/AppImageBuilder_vpack.yml"
+    #   env:
+    #     UPDATE_INFO: gh-releases-zsync|GhostVaibhav|vupdate|latest|*x86_64.AppImage.zsync
+
+    # - name: Building the AppImage for vupdate
+    #   uses: AppImageCrafters/build-appimage@master
+    #   with:
+    #     recipe: "./misc/scripts/AppImageBuilder_vupdate.yml"
+    #   env:
+    #     UPDATE_INFO: gh-releases-zsync|GhostVaibhav|vupdate|latest|*x86_64.AppImage.zsync
     
     - name: Release
       uses: softprops/action-gh-release@v1
